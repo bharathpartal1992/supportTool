@@ -1,0 +1,24 @@
+mvn archetype:generate -DgroupId=com.jatin.com
+on -DartifactId=projectmavencommon -DarchetypeArtifactId=maven-archetype-quickst
+art -DinteractiveMode=false
+
+
+
+mvn archetype:generate -DgroupId=com.jatin.ejb
+-DartifactId=projectmavenejb -DarchetypeArtifactId=maven-archetype-quickstart -D
+interactiveMode=false
+
+mvn archetype:generate -DgroupId=com.jatin.ejb
+-DartifactId=projectmavenweb -DarchetypeArtifactId=maven-archetype-quickstart -D
+interactiveMode=false
+
+
+Base Praoject
+mvn archetype:generate -DgroupId=com.jatin -Dar
+tifactId=projectmaven -DarchetypeArtifactId=maven-archetype-quickstart -Dinterac
+tiveMode=false
+
+
+
+
+https://docs.oracle.com/middleware/1212/core/MAVEN/config_maven.htm#MAVEN316

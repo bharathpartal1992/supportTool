@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	
+	<bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+		<property name="environment">
+			<props>
+				<prop key="java.naming.factory.initial">weblogic.jndi.WLInitialContextFactory</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiTemplate">
+			<ref bean="jndiTemplate" />
+	</property>
+		<property name="jndiName" value="${site1.jdbcjndi}" />
+			
+		
+	</bean>
+	
+	
+	<bean id="dataSource1" class="org.springframework.jndi.JndiObjectFactoryBean" lazy-init="true" >
+		<property name="jndiTemplate">
+			<ref bean="jndiTemplate" />
+	</property>
+		<property name="jndiName" value="${site2.jdbcjndi}" />
+	</bean>
+
+	<!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg index="0" ref="dataSource" />
+	</bean> -->
+	
+	
+	
+	<!-- <bean id="dbProperties"
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location" value="file:///${PROP_HOME}supporttoolDB.txt" />
+ 
+</bean> -->
+
+</beans>

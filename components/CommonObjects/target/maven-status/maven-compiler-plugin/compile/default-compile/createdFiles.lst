@@ -1,0 +1,17 @@
+com\orsb2bgw\supporttool\Objects\dto\SupportToolRequest.class
+com\orsb2bgw\supporttool\Objects\jsonview\Views$Public.class
+com\orsb2bgw\supporttool\Objects\constants\ProcessorKeys.class
+com\orsb2bgw\supporttool\Objects\dto\ORSSMessageStatusDTO.class
+com\orsb2bgw\supporttool\Objects\dto\SearchDTO.class
+com\orsb2bgw\supporttool\Objects\dto\WorkListKeys.class
+com\orsb2bgw\supporttool\Objects\constants\ServiceMethods.class
+com\orsb2bgw\supporttool\Objects\enums\ProcessSelector$2.class
+com\orsb2bgw\supporttool\Objects\dto\SupplierDTO.class
+com\orsb2bgw\supporttool\Objects\dto\ORSSMessageDetailsDTO.class
+com\orsb2bgw\supporttool\Objects\enums\ProcessSelector$3.class
+com\orsb2bgw\supporttool\Objects\dto\UserDTO.class
+com\orsb2bgw\supporttool\Objects\dto\AjaxResponseBody.class
+com\orsb2bgw\supporttool\Objects\enums\ProcessSelector$1.class
+com\orsb2bgw\supporttool\Objects\enums\ProcessSelector.class
+com\orsb2bgw\supporttool\Objects\dto\WorkListDTO.class
+com\orsb2bgw\supporttool\Objects\jsonview\Views.class

@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Aug 02 20:08:51 IST 2012
+default-http\://repo1.maven.org/maven2/.lastUpdated=1343918331944
+http\://repo1.maven.org/maven2/.error=Could not transfer artifact btw\:b2B.E2ELogging.AliasNamesPlan\:pom\:1.1 from/to central (http\://repo1.maven.org/maven2)\: Error transferring file\: Connection reset

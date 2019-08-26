@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:c="http://www.springframework.org/schema/c" xmlns:cache="http://www.springframework.org/schema/cache" xmlns:context="http://www.springframework.org/schema/context" xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+		
+		
+		
+<context:component-scan base-package="com.orsb2bgw.supporttool.dao,com.orsb2bgw.supporttool.Objects,com.orsb2bgw.supporttool.process,com.orsb2bgw.supporttool.util" />		
+
+<context:property-placeholder location="file:///${PROP_HOME}supporttool.properties" order="1" ignore-unresolvable="true" />
+<!-- <context:property-placeholder location="file:///${PROP_HOME}JMSconfiguration.properties" order="2" ignore-unresolvable="true" /> -->
+		
+<import resource="classpath*:applicationContext-orsb2bgw-processor.xml"/>
+<import resource="classpath*:applicationContext-orsb2bgw-commondao.xml" />
+<import resource="classpath*:applicationContext-orsb2bgw-jmsConf.xml"/>
+<aop:aspectj-autoproxy />
+
+<util:map id ="availableProcessors" key-type="java.lang.String" value-type="com.orsb2bgw.supporttool.process.ISupportProcessor" map-class="java.util.HashMap">
+            <entry key="user-Management" value-ref="userManagement" />
+            <entry key="work_list" value-ref="workListProcessor" />
+            <entry key="user-SupportToolList" value-ref="supportToolList"/>
+	        <entry key="session_management" value-ref="sessionManagementProcessor" />
+</util:map>	
+
+
+ 
+		
+		
+</beans>

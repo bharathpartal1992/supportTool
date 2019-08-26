@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Oct 20 14:50:16 IST 2011
+default-http\://repo1.maven.org/maven2/.lastUpdated=1319102416747
+http\://repo1.maven.org/maven2/.error=Could not transfer artifact com.bea.core.xquery.xmlbeans\:xmlbeans\:pom\:3.0 from/to central (http\://repo1.maven.org/maven2)\: Error transferring file\: Connection timed out\: connect

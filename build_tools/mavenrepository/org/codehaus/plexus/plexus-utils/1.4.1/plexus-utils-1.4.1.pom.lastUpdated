@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Dec 26 12:20:09 IST 2011
+default-http\://repo1.maven.org/maven2/.lastUpdated=1324882209208
+http\://repo1.maven.org/maven2/.error=Could not transfer artifact org.codehaus.plexus\:plexus-utils\:pom\:1.4.1 from/to repo1 (http\://repo1.maven.org/maven2)\: Error transferring file\: Connection reset

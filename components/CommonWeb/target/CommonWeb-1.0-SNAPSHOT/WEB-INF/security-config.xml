@@ -1,0 +1,51 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true">
+		<access-denied-handler error-page="/403page" />
+         <intercept-url pattern="/nuser**" access="hasAnyRole('SUPERUSER', 'NORMALUSER', 'ADMIN')" />
+		<intercept-url pattern="/admin/**" access ="hasRole('ADMIN')"/>
+		<intercept-url pattern="/workList**" access="hasAnyRole('SUPERUSER', 'ADMIN')" />
+		<intercept-url pattern="/supportTool**" access="hasAnyRole('SUPERUSER', 'ADMIN', 'NORMALUSER')" />
+		<intercept-url pattern="/home**" access="hasAnyRole('SUPERUSER', 'ADMIN', 'NORMALUSER')" />
+		
+		<form-login login-page='/login' username-parameter="user_name"
+			password-parameter="pass_word" login-processing-url="/j_spring_security_check"  default-target-url="/user"
+			always-use-default-target="true"
+			authentication-failure-url="/login?authfailed" />
+<!-- 		<logout invalidate-session="true" logout-success-url="/login?logout" /> -->
+		<logout invalidate-session="true" logout-url="/login?logout"/>
+		<session-management>
+             <concurrency-control max-sessions="1" expired-url="/login" />
+             
+        </session-management>
+
+	</http>
+	
+	
+
+	<!-- <authentication-manager> <authentication-provider> <user-service> <user 
+		name="user" password="user@123" authorities="ROLE_ADMIN" /> </user-service> 
+		</authentication-provider> </authentication-manager> -->
+
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder ref="encoder" />
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select user_name,pass_word,status from orss_support_tool_users where user_name=?"
+				authorities-by-username-query="select user_name, role from orss_support_tool_users where user_name =?  " />
+		</authentication-provider>
+	</authentication-manager>
+	
+	
+
+	<beans:bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<beans:constructor-arg name="strength" value="10" />
+	</beans:bean>
+
+</beans:beans>

@@ -1,0 +1,6 @@
+db.host=localhost
+db.port=1326
+db.user=APPL_USER
+db.pass=APPL_USER
+java.naming.factory.initial=weblogic.jndi.WLInitialContextFactory
+jndiName=supportTool

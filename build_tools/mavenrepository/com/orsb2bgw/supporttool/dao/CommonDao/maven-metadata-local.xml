@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.orsb2bgw.supporttool.dao</groupId>
+  <artifactId>CommonDao</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160829050419</lastUpdated>
+  </versioning>
+</metadata>

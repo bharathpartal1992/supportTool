@@ -1,0 +1,5 @@
+com\orsb2bgw\supporttool\process\impl\WorklistProcessorImpl.class
+com\orsb2bgw\supporttool\process\impl\UserManagementProcessorImpl.class
+com\orsb2bgw\supporttool\process\impl\SessionManagementProcessor.class
+com\orsb2bgw\supporttool\process\impl\SupportToolProcessorImpl.class
+com\orsb2bgw\supporttool\process\ISupportProcessor.class
